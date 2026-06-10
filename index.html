@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Premium Domain — For Acquisition</title>
+<meta name="description" content="Premium brandable domain available for acquisition." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:#08070f;color:#fff;-webkit-font-smoothing:antialiased;font-family:system-ui,sans-serif}
+  /* boot / fallback picker */
+  .__boot{min-height:100vh;display:grid;place-items:center;padding:40px;text-align:center}
+  .__boot h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.03em;margin-bottom:10px}
+  .__boot p{color:#8b86a8;margin-bottom:30px}
+  .__pick{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:680px}
+  .__pick a{padding:14px 20px;border-radius:12px;border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.04);color:#fff;text-decoration:none;font-weight:600;transition:.2s}
+  .__pick a:hover{border-color:#a78bfa;background:rgba(139,92,246,.12);transform:translateY(-2px)}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="__boot">
+    <div>
+      <h1>Premium domains — preview</h1>
+      <p>This deployment auto-detects the domain. Preview each design below:</p>
+      <div class="__pick">
+        <a href="?domain=markettrend.ai">MarketTrend.ai</a>
+        <a href="?domain=riskpro.ai">RiskPro.ai</a>
+        <a href="?domain=investorsedge.ai">InvestorsEdge.ai</a>
+        <a href="?domain=reports.bot">Reports.bot</a>
+        <a href="?domain=workflow.bot">Workflow.bot</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   ROUTER — detect domain, inject the matching premium design.
+   Override locally / on *.vercel.app with ?domain=markettrend.ai
+   ============================================================ */
+const CONTACT = "domains@investorsedge.ai";
+
+function fonts(href){ const l=document.createElement("link"); l.rel="stylesheet"; l.href=href; document.head.appendChild(l); }
+function mail(domain){ return "mailto:"+CONTACT+"?subject=Offer%20for%20"+domain+"&body=Hi%2C%20I%27m%20interested%20in%20acquiring%20"+domain+".%20My%20offer%20is%3A%20"; }
+
+/* ---------- shared offer-form block (accent passed in) ---------- */
+function offer(domain, btnClass){
+  return `
+  <div class="offer-box">
+    <input type="email" placeholder="you@company.com" />
+    <input type="text" placeholder="Your offer (USD)" style="max-width:170px" />
+    <a class="btn ${btnClass}" href="${mail(domain)}">Start acquisition inquiry</a>
+  </div>
+  <p class="micro">Direct owner sale · No broker fees · Secure transfer available through Escrow.com</p>`;
+}
+
+const DESIGNS = {
+
+/* ============================== 1. MARKETTREND.AI ============================== */
+"markettrend.ai": {
+  title: "MarketTrend.ai — Premium Domain for Sale",
+  fonts: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap",
+  html: () => `
+  <style>
+    .mt{--ink:#070b14;--teal:#2dd4bf;--tealb:#5eead4;--teald:#0d9488;--gold:#fbbf24;--text:#e7eef5;--muted:#7d8da3;--line:rgba(45,212,191,.14);
+      font-family:'Plus Jakarta Sans',sans-serif;background:var(--ink);color:var(--text);position:relative;overflow-x:hidden}
+    .mt .mono{font-family:'JetBrains Mono',monospace}
+    .mt canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.5}
+    .mt .mesh{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(60% 50% at 80% 10%,rgba(45,212,191,.16),transparent 60%),radial-gradient(50% 50% at 10% 80%,rgba(13,148,136,.18),transparent 60%)}
+    .mt .wrap{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 28px}
+    .mt nav{display:flex;justify-content:space-between;align-items:center;padding:30px 0}
+    .mt .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.18rem;letter-spacing:-.02em}
+    .mt .tag{font-size:.72rem;color:var(--tealb);border:1px solid var(--line);padding:7px 14px;border-radius:100px;background:rgba(45,212,191,.05);letter-spacing:.04em}
+    .mt .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;background:rgba(12,19,34,.5);position:relative;z-index:2}
+    .mt .tk{display:inline-block;padding:11px 0;animation:mtscroll 36s linear infinite}
+    .mt .tk span{margin:0 26px;font-size:.78rem;color:var(--muted)}.mt .up{color:var(--tealb)}.mt .dn{color:#f87171}
+    @keyframes mtscroll{to{transform:translateX(-50%)}}
+    .mt .hero{padding:92px 0 60px;text-align:center}
+    .mt .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tealb);margin-bottom:28px}
+    .mt .pulse{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(45,212,191,.6);animation:mtp 2s infinite}
+    @keyframes mtp{70%{box-shadow:0 0 0 11px rgba(45,212,191,0)}100%{box-shadow:0 0 0 0 rgba(45,212,191,0)}}
+    .mt h1{font-size:clamp(3rem,8vw,6.2rem);font-weight:800;line-height:.96;letter-spacing:-.045em;margin-bottom:24px}
+    .mt h1 .ai{background:linear-gradient(120deg,var(--tealb),var(--teal) 50%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .mt .sub{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--muted);max-width:660px;margin:0 auto 40px;line-height:1.55}.mt .sub b{color:var(--text);font-weight:600}
+    .mt .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .mt .btn{padding:17px 34px;border-radius:13px;font-weight:700;font-size:1rem;cursor:pointer;border:none;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.25s}
+    .mt .pri{background:linear-gradient(120deg,var(--teal),var(--teald));color:var(--ink);box-shadow:0 12px 40px -8px rgba(45,212,191,.5)}.mt .pri:hover{transform:translateY(-3px)}
+    .mt .gho{background:rgba(231,238,245,.04);border:1px solid var(--line);color:var(--text)}.mt .gho:hover{background:rgba(45,212,191,.09)}
+    .mt .pstrip{display:flex;gap:30px;justify-content:center;margin-top:58px;flex-wrap:wrap}
+    .mt .ps{text-align:center}.mt .ps .n{font-size:1.7rem;font-weight:800}.mt .ps .l{font-size:.72rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+    .mt section{padding:84px 0;position:relative;z-index:2}
+    .mt .label{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teald);font-weight:700;margin-bottom:14px}
+    .mt .h2{font-size:clamp(2rem,4.5vw,3.1rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-bottom:16px}
+    .mt .lead{color:var(--muted);font-size:1.08rem;max-width:560px;line-height:1.6}
+    .mt .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px}
+    .mt .bc{background:linear-gradient(160deg,rgba(12,19,34,.9),rgba(7,11,20,.6));border:1px solid var(--line);border-radius:20px;padding:32px 28px;transition:.35s}
+    .mt .bc:hover{transform:translateY(-6px);border-color:var(--teald)}
+    .mt .bc h3{font-size:1.2rem;font-weight:700;margin-bottom:10px}.mt .bc p{color:var(--muted);line-height:1.6;font-size:.95rem}
+    .mt .bi{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:20px;background:rgba(45,212,191,.1);border:1px solid var(--line);color:var(--tealb)}
+    .mt .uses{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+    .mt .ul{list-style:none}.mt .ul li{padding:20px 0;border-bottom:1px solid var(--line);display:flex;gap:16px}.mt .ul li:last-child{border:none}
+    .mt .un{font-family:'JetBrains Mono',monospace;color:var(--teald);font-size:.85rem;min-width:28px;padding-top:3px}
+    .mt .ul h4{font-size:1.12rem;font-weight:700;margin-bottom:4px}.mt .ul p{color:var(--muted);font-size:.93rem;line-height:1.5}
+    .mt .panel{background:linear-gradient(160deg,rgba(12,19,34,.95),rgba(7,11,20,.7));border:1px solid var(--line);border-radius:22px;padding:28px}
+    .mt .ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;font-size:.82rem;color:var(--muted)}
+    .mt .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--teal);margin-left:6px;animation:mtp 2s infinite}
+    .mt .bars{display:flex;align-items:flex-end;gap:10px;height:150px}
+    .mt .bar{flex:1;background:linear-gradient(180deg,var(--teal),var(--teald));border-radius:6px 6px 0 0;animation:mtgrow 1.6s ease-out backwards}
+    @keyframes mtgrow{from{height:0!important}}
+    .mt .sig{margin-top:20px;display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted)}.mt .sig b{color:var(--tealb)}
+    .mt .final{text-align:center;background:radial-gradient(60% 80% at 50% 0%,rgba(45,212,191,.12),transparent 70%);border:1px solid var(--line);border-radius:30px;padding:76px 40px;margin:40px 0 80px}
+    .mt .final h2{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;letter-spacing:-.04em;margin-bottom:16px}.mt .final p{color:var(--muted);font-size:1.12rem;margin-bottom:34px}
+    .mt .offer-box{display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+    .mt .offer-box input{flex:1;min-width:210px;padding:16px 20px;border-radius:13px;border:1px solid var(--line);background:rgba(7,11,20,.6);color:var(--text);font-size:1rem;font-family:inherit;outline:none;transition:.25s}.mt .offer-box input:focus{border-color:var(--teal)}
+    .mt .micro{font-size:.8rem;color:var(--muted);margin-top:20px}
+    .mt footer{border-top:1px solid var(--line);padding:32px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:.84rem;align-items:center;position:relative;z-index:2}
+    @media(max-width:820px){.mt .benefits{grid-template-columns:1fr}.mt .uses{grid-template-columns:1fr;gap:36px}}
+  </style>
+  <div class="mt">
+    <canvas id="mtTrend"></canvas><div class="mesh"></div>
+    <div class="wrap"><nav>
+      <div class="brand"><svg width="30" height="30" viewBox="0 0 32 32" fill="none"><path d="M3 22 L11 13 L17 18 L29 5" stroke="#5eead4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 5 L29 5 L29 12" stroke="#fbbf24" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="13" r="2.4" fill="#2dd4bf"/></svg>MarketTrend<span style="color:var(--tealb)">.ai</span></div>
+      <span class="tag mono">&#9702; DOMAIN AVAILABLE</span>
+    </nav></div>
+    <div class="ticker"><div class="tk">
+      <span class="mono">AI MARKET INTEL <span class="up">&#9650; live</span></span><span class="mono">SENTIMENT <span class="up">&#9650; 87.4</span></span><span class="mono">PREDICTIVE ANALYTICS <span class="up">&#9650; 12.1%</span></span><span class="mono">RISK SIGNAL <span class="dn">&#9660; 3.2</span></span><span class="mono">FINTECH TAM <span class="up">&#9650; \$110B+</span></span><span class="mono">EXACT-MATCH .AI</span>
+      <span class="mono">AI MARKET INTEL <span class="up">&#9650; live</span></span><span class="mono">SENTIMENT <span class="up">&#9650; 87.4</span></span><span class="mono">PREDICTIVE ANALYTICS <span class="up">&#9650; 12.1%</span></span><span class="mono">RISK SIGNAL <span class="dn">&#9660; 3.2</span></span><span class="mono">FINTECH TAM <span class="up">&#9650; \$110B+</span></span><span class="mono">EXACT-MATCH .AI</span>
+    </div></div>
+    <div class="wrap">
+      <header class="hero">
+        <div class="eyebrow"><span class="pulse"></span> Premium exact-match domain &middot; for sale</div>
+        <h1>The name markets<br>will <span class="ai">trade on.</span></h1>
+        <p class="sub"><b>MarketTrend.ai</b> is built-in authority for AI-powered market intelligence, trading signals, and fintech analytics. Instant credibility, instant SEO advantage, zero brand ambiguity.</p>
+        <div class="cta-row"><a href="#mt-offer" class="btn pri">Make an offer &rarr;</a><a href="#mt-why" class="btn gho">Why this domain</a></div>
+        <div class="pstrip"><div class="ps"><div class="n mono">.ai</div><div class="l">Exact match</div></div><div class="ps"><div class="n">\$110B+</div><div class="l">AI analytics TAM</div></div><div class="ps"><div class="n mono">11</div><div class="l">Char &middot; brandable</div></div><div class="ps"><div class="n">Tier-1</div><div class="l">Keyword authority</div></div></div>
+      </header>
+      <section id="mt-why">
+        <div class="label">Why it wins</div><div class="h2">A domain that does the<br>positioning for you.</div>
+        <p class="lead">In a fast-moving AI + finance market, the name is the first signal of trust. MarketTrend.ai arrives pre-loaded with credibility.</p>
+        <div class="benefits">
+          <div class="bc"><div class="bi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div><h3>Keyword authority</h3><p>Owns "market trend" and "AI market analysis" intent on day one &mdash; an SEO head start competitors can't buy back.</p></div>
+          <div class="bc"><div class="bi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M5 9l7-7 7 7"/></svg></div><h3>Instant trust</h3><p>The .ai extension reads as serious AI infrastructure, paired with a category-defining word for immediate credibility.</p></div>
+          <div class="bc"><div class="bi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V9M15 17v-5"/></svg></div><h3>Built to scale</h3><p>Works for a trading app, a research newsletter, a BI tool, or an AI forecasting platform. One name, many products.</p></div>
+        </div>
+      </section>
+      <section>
+        <div class="uses">
+          <div><div class="label">Perfect for</div><div class="h2">Who should own this.</div>
+            <ul class="ul">
+              <li><span class="un">01</span><div><h4>Fintech startups</h4><p>AI trading tools and signal platforms that need an unforgettable, on-message brand.</p></div></li>
+              <li><span class="un">02</span><div><h4>Research firms &amp; hedge funds</h4><p>Quant shops launching a public-facing intelligence product.</p></div></li>
+              <li><span class="un">03</span><div><h4>Crypto &amp; equities dashboards</h4><p>Real-time analysis where "trend" is the entire value proposition.</p></div></li>
+            </ul>
+          </div>
+          <div class="panel"><div class="ph mono">MARKETTREND.AI &mdash; LIVE FEED <span class="dot"></span></div><div class="bars" id="mtBars"></div><div class="sig"><span>SENTIMENT INDEX</span><span><b id="mtSent">87.4</b> &#9650; bullish</span></div><div class="sig"><span>PREDICTIVE CONFIDENCE</span><span><b>94%</b></span></div></div>
+        </div>
+      </section>
+      <section id="mt-offer"><div class="final"><h2>Own the trend.</h2><p>Serious inquiries only. Make an offer and acquire <b style="color:var(--tealb)">MarketTrend.ai</b> today.</p>${offer("markettrend.ai","pri")}</div></section>
+      <footer><div class="brand" style="font-size:1rem">MarketTrend<span style="color:var(--tealb)">.ai</span></div><div>&copy; 2026 &middot; Premium domain for acquisition</div></footer>
+    </div>
+  </div>`,
+  init: () => {
+    const c=document.getElementById("mtTrend"); if(!c) return; const x=c.getContext("2d"); let w,h;
+    function size(){w=c.width=innerWidth;h=c.height=innerHeight} size(); addEventListener("resize",size);
+    const lines=[0,1.5,3].map((o,li)=>({o,sp:.004+li*.002,col:li%2?"rgba(45,212,191,":"rgba(13,148,136,"})); let t=0;
+    (function draw(){ x.clearRect(0,0,w,h); t++; lines.forEach((L,li)=>{ x.beginPath(); const n=60,step=w/(n-1); for(let i=0;i<n;i++){const base=h*(.35+li*.18);const y=base+Math.sin(i*.28+t*L.sp+L.o)*70;i?x.lineTo(i*step,y):x.moveTo(i*step,y);} const g=x.createLinearGradient(0,0,w,0);g.addColorStop(0,L.col+"0)");g.addColorStop(.5,L.col+(li===0?.6:.3)+")");g.addColorStop(1,L.col+"0)");x.strokeStyle=g;x.lineWidth=li===0?2.2:1.4;x.stroke();}); requestAnimationFrame(draw); })();
+    const bars=document.getElementById("mtBars"); [42,68,55,80,62,90,74,96].forEach((v,i)=>{const b=document.createElement("div");b.className="bar";b.style.height=v+"%";b.style.animationDelay=(i*.08)+"s";bars.appendChild(b);});
+    const sv=document.getElementById("mtSent"); setInterval(()=>{sv.textContent=(86+Math.random()*3).toFixed(1)},1400);
+  }
+},
+
+/* ============================== 2. RISKPRO.AI ============================== */
+"riskpro.ai": {
+  title: "RiskPro.ai — Premium Domain for Sale",
+  fonts: "https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap",
+  html: () => `
+  <style>
+    .rp{--bg:#0a0e14;--slate:#11161f;--slate2:#161d29;--amber:#f59e0b;--amberb:#fbbf24;--green:#34d399;--text:#eef2f7;--muted:#8794a6;--line:rgba(148,163,184,.12);--la:rgba(245,158,11,.25);
+      font-family:'Archivo',sans-serif;background:var(--bg);color:var(--text);position:relative;overflow-x:hidden}
+    .rp .mono{font-family:'IBM Plex Mono',monospace}
+    .rp .gridbg{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(circle at 50% 30%,#000,transparent 80%);mask-image:radial-gradient(circle at 50% 30%,#000,transparent 80%);opacity:.5}
+    .rp .glow{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(50% 40% at 70% 0%,rgba(245,158,11,.1),transparent 65%),radial-gradient(45% 45% at 5% 90%,rgba(52,211,153,.07),transparent 65%)}
+    .rp .wrap{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 28px}
+    .rp nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0;border-bottom:1px solid var(--line)}
+    .rp .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.18rem;letter-spacing:-.02em}
+    .rp .status{display:flex;align-items:center;gap:9px;font-size:.74rem;color:var(--amberb);border:1px solid var(--la);padding:8px 15px;border-radius:7px;background:rgba(245,158,11,.06);letter-spacing:.06em}
+    .rp .blink{width:7px;height:7px;border-radius:50%;background:var(--green);animation:rpb 1.6s infinite}@keyframes rpb{50%{opacity:.25}}
+    .rp .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:84px 0 64px}
+    .rp .badge{display:inline-flex;align-items:center;gap:9px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amberb);border:1px solid var(--la);padding:8px 15px;border-radius:7px;margin-bottom:26px;background:rgba(245,158,11,.05)}
+    .rp h1{font-size:clamp(2.7rem,6vw,5rem);font-weight:900;line-height:.97;letter-spacing:-.04em;margin-bottom:22px}.rp h1 em{font-style:normal;color:var(--amber)}
+    .rp .sub{font-size:1.2rem;color:var(--muted);line-height:1.55;max-width:520px;margin-bottom:36px}.rp .sub b{color:var(--text);font-weight:600}
+    .rp .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+    .rp .btn{padding:16px 30px;border-radius:9px;font-weight:700;font-size:.98rem;cursor:pointer;border:none;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:.25s;font-family:inherit}
+    .rp .pri{background:var(--amber);color:#1a1206;box-shadow:0 10px 34px -8px rgba(245,158,11,.55)}.rp .pri:hover{background:var(--amberb);transform:translateY(-2px)}
+    .rp .gho{background:transparent;border:1px solid var(--line);color:var(--text)}.rp .gho:hover{border-color:var(--amber);color:var(--amberb)}
+    .rp .rc{background:linear-gradient(160deg,var(--slate),var(--bg));border:1px solid var(--line);border-radius:18px;padding:26px}
+    .rp .rh{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-size:.76rem;color:var(--muted)}.rp .rh .ok{color:var(--green)}
+    .rp .rw{position:relative;width:100%;aspect-ratio:1;max-width:270px;margin:0 auto}
+    .rp .sweep{transform-origin:50% 50%;animation:rpsw 4s linear infinite}@keyframes rpsw{to{transform:rotate(360deg)}}
+    .rp .threat{animation:rpping 3s infinite}.rp .threat:nth-of-type(2){animation-delay:1s}.rp .threat:nth-of-type(3){animation-delay:2s}@keyframes rpping{0%,100%{opacity:.3}50%{opacity:1}}
+    .rp .rs{display:flex;justify-content:space-between;margin-top:18px;gap:10px}.rp .rsi{text-align:center;flex:1}.rp .rsi .v{font-size:1.35rem;font-weight:800;font-family:'IBM Plex Mono',monospace}.rp .rsi .v.g{color:var(--green)}.rp .rsi .v.a{color:var(--amberb)}.rp .rsi .k{font-size:.64rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+    .rp .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:80px}
+    .rp .m{background:var(--slate);padding:26px 22px}.rp .m .v{font-size:1.9rem;font-weight:900;letter-spacing:-.03em}.rp .m .k{font-size:.76rem;color:var(--muted);margin-top:5px}
+    .rp section{padding:76px 0;position:relative;z-index:2}
+    .rp .label{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:14px}
+    .rp .h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:900;letter-spacing:-.035em;line-height:1.05;margin-bottom:16px}
+    .rp .lead{color:var(--muted);font-size:1.06rem;max-width:560px;line-height:1.6}
+    .rp .fe{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+    .rp .fc{background:var(--slate);border:1px solid var(--line);border-radius:14px;padding:30px 26px;transition:.3s}.rp .fc:hover{border-color:var(--la);background:var(--slate2)}
+    .rp .fi{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;margin-bottom:18px;background:rgba(245,158,11,.1);color:var(--amberb);border:1px solid var(--la)}
+    .rp .fc h3{font-size:1.16rem;font-weight:700;margin-bottom:10px}.rp .fc p{color:var(--muted);line-height:1.55;font-size:.93rem}
+    .rp .perfect{background:var(--slate);border:1px solid var(--line);border-radius:20px;padding:44px}
+    .rp .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:28px}
+    .rp .pf{display:flex;gap:14px;align-items:flex-start}.rp .chk{width:26px;height:26px;border-radius:7px;background:rgba(52,211,153,.12);color:var(--green);display:grid;place-items:center;flex-shrink:0;border:1px solid rgba(52,211,153,.25)}
+    .rp .pf h4{font-size:1rem;font-weight:700;margin-bottom:4px}.rp .pf p{color:var(--muted);font-size:.87rem;line-height:1.5}
+    .rp .final{text-align:center;border:1px solid var(--la);border-radius:22px;padding:72px 40px;margin:54px 0 80px;background:radial-gradient(60% 90% at 50% 0%,rgba(245,158,11,.1),transparent 70%)}
+    .rp .final h2{font-size:clamp(2.2rem,5vw,3.2rem);font-weight:900;letter-spacing:-.04em;margin-bottom:14px}.rp .final p{color:var(--muted);font-size:1.1rem;margin-bottom:32px}
+    .rp .offer-box{display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+    .rp .offer-box input{flex:1;min-width:210px;padding:16px 20px;border-radius:9px;border:1px solid var(--line);background:var(--bg);color:var(--text);font-size:.98rem;font-family:inherit;outline:none}.rp .offer-box input:focus{border-color:var(--amber)}
+    .rp .micro{font-size:.78rem;color:var(--muted);margin-top:18px}
+    .rp footer{border-top:1px solid var(--line);padding:32px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:.84rem;align-items:center;position:relative;z-index:2}
+    @media(max-width:880px){.rp .hero{grid-template-columns:1fr;gap:40px}.rp .fe,.rp .pg{grid-template-columns:1fr}.rp .metrics{grid-template-columns:repeat(2,1fr)}}
+  </style>
+  <div class="rp">
+    <div class="gridbg"></div><div class="glow"></div>
+    <div class="wrap">
+      <nav><div class="brand"><svg width="30" height="34" viewBox="0 0 30 34" fill="none"><path d="M15 1 L28 6 V16 C28 25 22 31 15 33 C8 31 2 25 2 16 V6 Z" fill="rgba(245,158,11,.08)" stroke="#f59e0b" stroke-width="1.8"/><path d="M9.5 17 L13.5 21 L21 11" stroke="#fbbf24" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>RiskPro<span style="color:var(--amber)">.ai</span></div><div class="status mono"><span class="blink"></span> SYSTEM SECURE &middot; AVAILABLE</div></nav>
+      <header class="hero">
+        <div><div class="badge">Premium .ai domain &middot; for acquisition</div><h1>Risk, <em>managed</em>.<br>Brand, secured.</h1><p class="sub"><b>RiskPro.ai</b> is the enterprise-grade name for AI risk intelligence &mdash; compliance, fraud detection, and operational risk. It signals expertise before a single click.</p><div class="cta-row"><a href="#rp-offer" class="btn pri">Acquire this domain &rarr;</a><a href="#rp-why" class="btn gho">See the case</a></div></div>
+        <div class="rc"><div class="rh mono"><span>THREAT RADAR</span><span class="ok">&#9679; MONITORING</span></div>
+          <div class="rw"><svg viewBox="0 0 200 200" style="width:100%;height:100%"><circle cx="100" cy="100" r="92" fill="none" stroke="rgba(148,163,184,.15)"/><circle cx="100" cy="100" r="62" fill="none" stroke="rgba(148,163,184,.12)"/><circle cx="100" cy="100" r="32" fill="none" stroke="rgba(148,163,184,.1)"/><line x1="100" y1="8" x2="100" y2="192" stroke="rgba(148,163,184,.08)"/><line x1="8" y1="100" x2="192" y2="100" stroke="rgba(148,163,184,.08)"/><g class="sweep"><defs><linearGradient id="rpsg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f59e0b" stop-opacity="0"/><stop offset="1" stop-color="#f59e0b" stop-opacity=".45"/></linearGradient></defs><path d="M100 100 L100 8 A92 92 0 0 1 168 38 Z" fill="url(#rpsg)"/><line x1="100" y1="100" x2="100" y2="8" stroke="#fbbf24" stroke-width="1.5"/></g><circle class="threat" cx="140" cy="64" r="4" fill="#f87171"/><circle class="threat" cx="68" cy="138" r="4" fill="#fbbf24"/><circle class="threat" cx="130" cy="130" r="4" fill="#34d399"/><circle cx="100" cy="100" r="3" fill="#f59e0b"/></svg></div>
+          <div class="rs"><div class="rsi"><div class="v g">99.7%</div><div class="k">Uptime</div></div><div class="rsi"><div class="v a">2.1k</div><div class="k">Signals/s</div></div><div class="rsi"><div class="v g">0</div><div class="k">Breaches</div></div></div>
+        </div>
+      </header>
+      <div class="metrics"><div class="m"><div class="v">\$5.3T</div><div class="k">Annual cost of risk &amp; fraud</div></div><div class="m"><div class="v" style="color:var(--amberb)">.ai</div><div class="k">Exact-match extension</div></div><div class="m"><div class="v">+34%</div><div class="k">YoY AI regtech demand</div></div><div class="m"><div class="v">Tier-1</div><div class="k">Enterprise brand signal</div></div></div>
+      <section id="rp-why"><div class="label">The case</div><div class="h2">A name compliance<br>teams already trust.</div><p class="lead">"Risk Pro" reads as professional, capable, and built for the enterprise &mdash; the exact perception regulated buyers need before they commit.</p>
+        <div class="fe">
+          <div class="fc"><div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L3 6v6c0 5 4 8 9 10 5-2 9-5 9-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Authority by name</h3><p>"Pro" conveys advanced, enterprise-ready capability. No explanation needed &mdash; the positioning is in the URL.</p></div>
+          <div class="fc"><div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div><h3>Keyword-aligned</h3><p>Targets high-value intent across AI risk assessment, fintech compliance, and fraud detection searches.</p></div>
+          <div class="fc"><div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h3>Enterprise-ready</h3><p>Fits regulatory tech, insurance AI, and cybersecurity &mdash; categories where credibility is the whole sale.</p></div>
+        </div>
+      </section>
+      <section><div class="perfect"><div class="label">Perfect for</div><div class="h2" style="font-size:2rem">Built for the teams selling trust.</div>
+        <div class="pg"><div class="pf"><span class="chk">&check;</span><div><h4>Risk management SaaS</h4><p>Platforms quantifying and mitigating enterprise exposure.</p></div></div><div class="pf"><span class="chk">&check;</span><div><h4>Compliance &amp; regtech</h4><p>Regulatory reporting and audit-automation tools.</p></div></div><div class="pf"><span class="chk">&check;</span><div><h4>AI cybersecurity</h4><p>Operational-risk and threat-intelligence firms.</p></div></div></div>
+      </div></section>
+      <section id="rp-offer"><div class="final"><div class="badge" style="margin-bottom:20px">Serious inquiries only</div><h2>Don't miss this.</h2><p>Acquire <b style="color:var(--amberb)">RiskPro.ai</b> and lead the AI risk category.</p>${offer("riskpro.ai","pri")}</div></section>
+      <footer><div class="brand" style="font-size:1rem">RiskPro<span style="color:var(--amber)">.ai</span></div><div>&copy; 2026 &middot; Premium domain for acquisition</div></footer>
+    </div>
+  </div>`,
+  init: () => {}
+},
+
+/* ============================== 3. INVESTORSEDGE.AI ============================== */
+"investorsedge.ai": {
+  title: "InvestorsEdge.ai — Premium Domain for Sale",
+  fonts: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap",
+  html: () => `
+  <style>
+    .ie{--bg:#0b0b0c;--panel:#131311;--gold:#c9a14a;--goldb:#e8c878;--golds:#f3e3bd;--cream:#f5f1e8;--text:#ece8df;--muted:#8a857a;--line:rgba(201,161,74,.18);
+      font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);position:relative;overflow-x:hidden}
+    .ie .serif{font-family:'Fraunces',serif}
+    .ie .vig{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(70% 60% at 50% -10%,rgba(201,161,74,.1),transparent 60%),radial-gradient(40% 40% at 90% 100%,rgba(201,161,74,.06),transparent 60%)}
+    .ie .ln{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;background:repeating-linear-gradient(0deg,transparent,transparent 78px,rgba(201,161,74,.04) 78px,rgba(201,161,74,.04) 79px)}
+    .ie .wrap{position:relative;z-index:2;max-width:1140px;margin:0 auto;padding:0 30px}
+    .ie nav{display:flex;justify-content:space-between;align-items:center;padding:32px 0}
+    .ie .brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-weight:700;font-size:1.3rem;letter-spacing:-.01em}.ie .brand .e{color:var(--goldb);font-style:italic}
+    .ie .nr{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:9px 16px;border-radius:2px}
+    .ie .rule{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:8px 0}
+    .ie .hero{padding:78px 0 56px;text-align:center}
+    .ie .kick{font-size:.76rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:32px}
+    .ie h1{font-family:'Fraunces',serif;font-size:clamp(3.2rem,8.5vw,6.6rem);font-weight:600;line-height:.95;letter-spacing:-.025em;margin-bottom:28px}.ie h1 .it{font-style:italic;font-weight:500;color:var(--goldb)}
+    .ie .sub{font-size:1.2rem;color:var(--muted);max-width:600px;margin:0 auto 42px;line-height:1.6}.ie .sub b{color:var(--cream);font-weight:600}
+    .ie .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .ie .btn{padding:17px 36px;border-radius:3px;font-weight:600;font-size:1rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:.3s;font-family:inherit}
+    .ie .pri{background:linear-gradient(120deg,var(--gold),var(--goldb));color:#1a1505;box-shadow:0 14px 40px -10px rgba(201,161,74,.5)}.ie .pri:hover{transform:translateY(-3px)}
+    .ie .gho{background:transparent;border:1px solid var(--line);color:var(--golds)}.ie .gho:hover{border-color:var(--gold);background:rgba(201,161,74,.06)}
+    .ie .cstage{margin:64px auto 0;max-width:840px}
+    .ie .cframe{border:1px solid var(--line);border-radius:6px;background:linear-gradient(160deg,var(--panel),var(--bg));padding:30px}
+    .ie .ctop{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}.ie .ctop .v{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600}.ie .ctop .v .pct{font-size:1rem;color:var(--goldb);margin-left:10px;font-family:'Manrope'}.ie .ctop .lab{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+    .ie svg.gr{width:100%;height:190px;display:block}
+    .ie .gline{fill:none;stroke:var(--goldb);stroke-width:2.5;stroke-dasharray:1400;stroke-dashoffset:1400;animation:iedraw 2.6s .4s ease-out forwards}@keyframes iedraw{to{stroke-dashoffset:0}}
+    .ie section{padding:84px 0;position:relative;z-index:2}
+    .ie .center{text-align:center;max-width:680px;margin:0 auto}
+    .ie .label{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .ie .h2{font-family:'Fraunces',serif;font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;letter-spacing:-.02em;line-height:1.05;margin-bottom:18px}.ie .h2 .it{font-style:italic;color:var(--goldb)}
+    .ie .lead{color:var(--muted);font-size:1.08rem;line-height:1.65}
+    .ie .ben{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .ie .bcol{padding:42px 30px;border-right:1px solid var(--line);transition:.3s}.ie .bcol:last-child{border-right:none}.ie .bcol:hover{background:rgba(201,161,74,.04)}
+    .ie .bn{font-family:'Fraunces',serif;font-style:italic;font-size:2.5rem;color:var(--gold);font-weight:500;margin-bottom:14px;line-height:1}
+    .ie .bcol h3{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:600;margin-bottom:12px}.ie .bcol p{color:var(--muted);line-height:1.6;font-size:.95rem}
+    .ie .pl-list{display:flex;flex-direction:column;max-width:760px;margin:48px auto 0}
+    .ie .pl{display:flex;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}.ie .pl:last-child{border:none}
+    .ie .plic{width:48px;height:48px;border-radius:3px;border:1px solid var(--line);display:grid;place-items:center;color:var(--goldb);flex-shrink:0}
+    .ie .pl h4{font-family:'Fraunces',serif;font-size:1.26rem;font-weight:600;margin-bottom:4px}.ie .pl p{color:var(--muted);font-size:.95rem}
+    .ie .pl .ar{margin-left:auto;color:var(--gold);font-size:1.4rem;opacity:.4;transition:.3s}.ie .pl:hover .ar{opacity:1;transform:translateX(6px)}
+    .ie .final{text-align:center;padding:84px 40px;margin:50px 0 80px;border:1px solid var(--line);border-radius:6px;background:radial-gradient(70% 100% at 50% 0%,rgba(201,161,74,.1),transparent 70%)}.ie .final .h2{margin-bottom:18px}.ie .final p{color:var(--muted);font-size:1.12rem;margin-bottom:36px}
+    .ie .offer-box{display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+    .ie .offer-box input{flex:1;min-width:210px;padding:17px 22px;border-radius:3px;border:1px solid var(--line);background:rgba(11,11,12,.7);color:var(--text);font-size:1rem;font-family:inherit;outline:none}.ie .offer-box input:focus{border-color:var(--gold)}
+    .ie .micro{font-size:.8rem;color:var(--muted);margin-top:20px;letter-spacing:.04em}
+    .ie footer{border-top:1px solid var(--line);padding:34px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:.84rem;align-items:center;position:relative;z-index:2}
+    @media(max-width:860px){.ie .ben{grid-template-columns:1fr}.ie .bcol{border-right:none;border-bottom:1px solid var(--line)}.ie .bcol:last-child{border-bottom:none}}
+  </style>
+  <div class="ie">
+    <div class="vig"></div><div class="ln"></div>
+    <div class="wrap">
+      <nav><div class="brand"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="16" stroke="#c9a14a" stroke-width="1.3"/><path d="M9 21 L15 15 L19 18 L26 10" stroke="#e8c878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 10 L26 10 L26 14" stroke="#e8c878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Investors<span class="e">Edge</span><span style="color:var(--gold)">.ai</span></div><span class="nr">For Acquisition</span></nav>
+      <div class="rule"></div>
+      <header class="hero"><div class="kick">Premium .ai Domain</div><h1>The <span class="it">edge</span> every<br>investor is paying for.</h1><p class="sub"><b>InvestorsEdge.ai</b> hands your platform an immediate advantage in the crowded AI investing space &mdash; the kind of name robo-advisors, research tools, and wealth managers build empires on.</p><div class="cta-row"><a href="#ie-offer" class="btn pri">Make an offer &rarr;</a><a href="#ie-why" class="btn gho">Why it commands a premium</a></div>
+        <div class="cstage"><div class="cframe"><div class="ctop"><div><div class="lab">Brand equity &middot; projected</div><div class="v serif">Outperform<span class="pct">&#9650; the market</span></div></div><div class="lab">2026 &rarr;</div></div>
+          <svg class="gr" viewBox="0 0 800 190" preserveAspectRatio="none"><defs><linearGradient id="iefill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9a14a" stop-opacity=".28"/><stop offset="1" stop-color="#c9a14a" stop-opacity="0"/></linearGradient></defs><path d="M0 168 L120 160 L240 142 L360 150 L480 112 L600 88 L720 46 L800 16 L800 190 L0 190 Z" fill="url(#iefill)"/><path class="gline" d="M0 168 L120 160 L240 142 L360 150 L480 112 L600 88 L720 46 L800 16"/><circle cx="800" cy="16" r="5" fill="#e8c878"/></svg>
+        </div></div>
+      </header>
+      <section id="ie-why"><div class="center"><div class="label">Why it wins</div><div class="h2">Memorable. Premium.<br><span class="it">Unmistakably yours.</span></div><p class="lead">"Edge" implies superior performance and AI-driven insight &mdash; the single most persuasive promise in wealth-tech, baked into your domain.</p></div>
+        <div class="ben"><div class="bcol"><div class="bn">01</div><h3>Implied performance</h3><p>"Edge" signals an advantage before a prospect reads a word of copy. The promise is the URL.</p></div><div class="bcol"><div class="bn">02</div><h3>Category relevance</h3><p>Aligned with investor tools, portfolio optimization, and alternative-data strategies &mdash; premium search territory.</p></div><div class="bcol"><div class="bn">03</div><h3>Trust &amp; recall</h3><p>High memorability and instant credibility with fintech audiences who buy on confidence.</p></div></div>
+      </section>
+      <section><div class="center"><div class="label">Perfect for</div><div class="h2">Who should <span class="it">own it.</span></div></div>
+        <div class="pl-list">
+          <div class="pl"><span class="plic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 18l6-6 4 3 8-9"/><circle cx="9" cy="12" r="1.5"/></svg></span><div><h4>AI trading &amp; robo-advisors</h4><p>Apps automating smarter, faster investment decisions.</p></div><span class="ar">&rarr;</span></div>
+          <div class="pl"><span class="plic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg></span><div><h4>Investment research platforms</h4><p>Alternative-data and signal products for serious capital.</p></div><span class="ar">&rarr;</span></div>
+          <div class="pl"><span class="plic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20"/><path d="M17 7c0-2-2-3-5-3s-5 1-5 3 2 3 5 3 5 1 5 3-2 3-5 3-5-1-5-3"/></svg></span><div><h4>Wealth &amp; portfolio tools</h4><p>Personalized wealth management built to beat the benchmark.</p></div><span class="ar">&rarr;</span></div>
+        </div>
+      </section>
+      <section id="ie-offer"><div class="final"><div class="label">Serious inquiries only</div><div class="h2">Give your startup<br>the <span class="it">edge.</span></div><p>Acquire <b style="color:var(--goldb)">InvestorsEdge.ai</b> and own the advantage.</p>${offer("investorsedge.ai","pri")}</div></section>
+      <footer><div class="brand" style="font-size:1.05rem">Investors<span class="e">Edge</span><span style="color:var(--gold)">.ai</span></div><div>&copy; 2026 &middot; Premium domain for acquisition</div></footer>
+    </div>
+  </div>`,
+  init: () => {}
+},
+
+/* ============================== 4. REPORTS.BOT ============================== */
+"reports.bot": {
+  title: "Reports.bot — Premium Domain for Sale",
+  fonts: "https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap",
+  html: () => `
+  <style>
+    .rb{--paper:#f4f1ea;--paper2:#fbfaf6;--ink:#1c1b18;--inks:#4a4842;--muted:#8b887e;--em:#0f7a5c;--emb:#12a07a;--coral:#e0613a;--line:rgba(28,27,24,.1);--line2:rgba(28,27,24,.06);
+      font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);position:relative;overflow-x:hidden}
+    .rb .serif{font-family:'Spectral',serif}.rb .mono{font-family:'DM Mono',monospace}
+    .rb .dots{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;background-image:radial-gradient(rgba(28,27,24,.07) 1px,transparent 1px);background-size:22px 22px}
+    .rb .warm{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(50% 45% at 85% 5%,rgba(18,160,122,.08),transparent 60%),radial-gradient(45% 40% at 5% 95%,rgba(224,97,58,.06),transparent 60%)}
+    .rb .wrap{position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:0 30px}
+    .rb nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
+    .rb .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:1.22rem;letter-spacing:-.02em}.rb .brand .b{color:var(--em)}
+    .rb .ntag{display:flex;align-items:center;gap:8px;font-size:.74rem;color:var(--em);font-weight:600;border:1px solid var(--line);background:var(--paper2);padding:8px 15px;border-radius:100px}
+    .rb .ld{width:7px;height:7px;border-radius:50%;background:var(--emb);animation:rbp 1.4s infinite}@keyframes rbp{50%{opacity:.3}}
+    .rb .hero{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;padding:68px 0 60px}
+    .rb .eye{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;font-weight:600;color:var(--coral);text-transform:uppercase;letter-spacing:.1em;margin-bottom:22px}
+    .rb h1{font-family:'Spectral',serif;font-size:clamp(2.8rem,6vw,4.6rem);font-weight:600;line-height:1;letter-spacing:-.02em;margin-bottom:22px}.rb h1 .it{font-style:italic;color:var(--em)}
+    .rb .sub{font-size:1.16rem;color:var(--inks);line-height:1.6;margin-bottom:34px;max-width:480px}.rb .sub b{color:var(--ink);font-weight:600}
+    .rb .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+    .rb .btn{padding:16px 30px;border-radius:11px;font-weight:600;font-size:.98rem;cursor:pointer;border:none;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:.25s;font-family:inherit}
+    .rb .pri{background:var(--ink);color:var(--paper2);box-shadow:0 10px 30px -10px rgba(28,27,24,.5)}.rb .pri:hover{background:var(--em);transform:translateY(-2px)}
+    .rb .gho{background:transparent;border:1px solid var(--line);color:var(--ink)}.rb .gho:hover{border-color:var(--ink);background:var(--paper2)}
+    .rb .doc{background:var(--paper2);border:1px solid var(--line);border-radius:16px;box-shadow:0 30px 70px -30px rgba(28,27,24,.3);overflow:hidden;transform:rotate(.6deg)}
+    .rb .docbar{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid var(--line2);background:var(--paper)}
+    .rb .docbar .d{width:10px;height:10px;border-radius:50%;background:var(--line)}.rb .docbar .ttl{margin-left:8px;font-size:.78rem;color:var(--muted);font-family:'DM Mono'}.rb .docbar .gen{margin-left:auto;font-size:.72rem;color:var(--em);font-weight:600;display:flex;align-items:center;gap:6px}
+    .rb .docbody{padding:26px 28px;min-height:300px}
+    .rb .doch{font-family:'Spectral',serif;font-size:1.5rem;font-weight:600;margin-bottom:4px}.rb .docmeta{font-size:.76rem;color:var(--muted);font-family:'DM Mono';margin-bottom:20px}
+    .rb #rbtyped{font-size:.92rem;line-height:1.7;color:var(--inks);min-height:48px}
+    .rb #rbtyped .cur{display:inline-block;width:8px;height:16px;background:var(--em);margin-left:2px;vertical-align:middle;animation:rbblink .8s steps(1) infinite}@keyframes rbblink{50%{opacity:0}}
+    .rb .ds{display:flex;gap:14px;margin-top:24px}.rb .d1{flex:1;background:var(--paper);border:1px solid var(--line2);border-radius:10px;padding:14px}.rb .d1 .v{font-size:1.4rem;font-weight:700;font-family:'Spectral';letter-spacing:-.02em}.rb .d1 .v.e{color:var(--em)}.rb .d1 .v.c{color:var(--coral)}.rb .d1 .k{font-size:.7rem;color:var(--muted);margin-top:2px}
+    .rb .mb{display:flex;gap:5px;align-items:flex-end;height:36px;margin-top:18px}.rb .mb i{flex:1;background:var(--em);border-radius:3px 3px 0 0;opacity:.85;animation:rbrise 1.2s ease-out backwards}@keyframes rbrise{from{height:0!important}}
+    .rb section{padding:80px 0;position:relative;z-index:2}
+    .rb .label{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);font-weight:700;margin-bottom:14px}
+    .rb .h2{font-family:'Spectral',serif;font-size:clamp(2rem,4.5vw,3.1rem);font-weight:600;letter-spacing:-.02em;line-height:1.05;margin-bottom:16px}.rb .h2 .it{font-style:italic;color:var(--em)}
+    .rb .lead{color:var(--inks);font-size:1.06rem;max-width:560px;line-height:1.6}
+    .rb .fe{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+    .rb .fc{background:var(--paper2);border:1px solid var(--line);border-radius:16px;padding:30px 26px;transition:.3s}.rb .fc:hover{transform:translateY(-5px);box-shadow:0 20px 44px -20px rgba(28,27,24,.25);border-color:var(--em)}
+    .rb .fi{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px;background:rgba(18,160,122,.1);color:var(--em);border:1px solid rgba(18,160,122,.2)}
+    .rb .fc h3{font-family:'Spectral',serif;font-size:1.26rem;font-weight:600;margin-bottom:10px}.rb .fc p{color:var(--inks);line-height:1.55;font-size:.94rem}
+    .rb .band{background:var(--ink);color:var(--paper2);border-radius:22px;padding:50px 44px}.rb .band .label{color:var(--coral)}.rb .band .h2{color:var(--paper2)}
+    .rb .pgr{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:30px}.rb .pfi{display:flex;gap:14px;align-items:flex-start}.rb .pfi .n{font-family:'DM Mono';color:var(--emb);font-size:.85rem;padding-top:3px}.rb .pfi h4{font-size:1.02rem;font-weight:600;margin-bottom:4px}.rb .pfi p{color:rgba(244,241,234,.65);font-size:.89rem;line-height:1.5}
+    .rb .final{text-align:center;background:var(--paper2);border:1px solid var(--line);border-radius:24px;padding:74px 40px;margin:54px 0 80px}.rb .final .h2{margin-bottom:14px}.rb .final p{color:var(--inks);font-size:1.1rem;margin-bottom:32px}
+    .rb .offer-box{display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+    .rb .offer-box input{flex:1;min-width:210px;padding:16px 20px;border-radius:11px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:.98rem;font-family:inherit;outline:none}.rb .offer-box input:focus{border-color:var(--em)}
+    .rb .micro{font-size:.8rem;color:var(--muted);margin-top:18px;font-family:'DM Mono'}
+    .rb footer{border-top:1px solid var(--line);padding:32px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:.84rem;align-items:center;position:relative;z-index:2}
+    @media(max-width:880px){.rb .hero{grid-template-columns:1fr;gap:40px}.rb .fe,.rb .pgr{grid-template-columns:1fr}}
+  </style>
+  <div class="rb">
+    <div class="dots"></div><div class="warm"></div>
+    <div class="wrap">
+      <nav><div class="brand"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="3" y="2" width="22" height="28" rx="3" fill="#fbfaf6" stroke="#1c1b18" stroke-width="1.8"/><path d="M8 9h12M8 14h12M8 19h7" stroke="#1c1b18" stroke-width="1.8" stroke-linecap="round"/><circle cx="25" cy="24" r="7" fill="#12a07a"/><circle cx="22.5" cy="23" r="1.2" fill="#fff"/><circle cx="27.5" cy="23" r="1.2" fill="#fff"/><path d="M22.5 26.5h5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg>Reports<span class="b">.bot</span></div><span class="ntag"><span class="ld"></span> Domain available</span></nav>
+      <header class="hero">
+        <div><div class="eye">&#11041; Premium .bot domain &middot; for sale</div><h1>Reports that<br><span class="it">write themselves.</span></h1><p class="sub"><b>Reports.bot</b> is the perfect brand for automated reporting, AI analytics dashboards, and intelligent BI. In a world drowning in data, it's the name that means <em>effortless</em>.</p><div class="cta-row"><a href="#rb-offer" class="btn pri">Make an offer &rarr;</a><a href="#rb-why" class="btn gho">Why .bot wins</a></div></div>
+        <div class="doc"><div class="docbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="ttl">Q1_summary.report</span><span class="gen"><span class="ld"></span> auto-generating</span></div>
+          <div class="docbody"><div class="doch">Quarterly Performance Report</div><div class="docmeta">GENERATED BY REPORTS.BOT &middot; 0.4s</div><div id="rbtyped"><span class="cur"></span></div><div class="mb" id="rbMb"></div><div class="ds"><div class="d1"><div class="v e">+24%</div><div class="k">Revenue &uarr;</div></div><div class="d1"><div class="v">1,402</div><div class="k">Records</div></div><div class="d1"><div class="v c">3</div><div class="k">Flags</div></div></div></div>
+        </div>
+      </header>
+      <section id="rb-why"><div class="label">Why it wins</div><div class="h2">The name that says<br><span class="it">"done for you."</span></div><p class="lead">Buyers grasp the value instantly. No tagline required &mdash; the domain is the pitch.</p>
+        <div class="fe">
+          <div class="fc"><div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div><h3>Direct keyword match</h3><p>Captures "reports bot" and automated-reporting search intent at the source &mdash; exact-match authority.</p></div>
+          <div class="fc"><div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M9 2v4M15 2v4M9 13h2M14 13h1"/></svg></div><h3>.bot = automation</h3><p>The extension reinforces AI-agent functionality. The product category is communicated before the click.</p></div>
+          <div class="fc"><div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17l5-5 4 4 8-9"/><path d="M3 21h18"/></svg></div><h3>Built for SaaS</h3><p>Tailor-made for teams that need real-time, accurate, repeatable reporting at scale.</p></div>
+        </div>
+      </section>
+      <section><div class="band"><div class="label">Perfect for</div><div class="h2" style="font-size:2rem">Where it belongs.</div>
+        <div class="pgr"><div class="pfi"><span class="n">01</span><div><h4>AI business intelligence</h4><p>Reporting platforms turning raw data into decisions.</p></div></div><div class="pfi"><span class="n">02</span><div><h4>Automated generators</h4><p>Marketing &amp; financial report engines that run on autopilot.</p></div></div><div class="pfi"><span class="n">03</span><div><h4>Enterprise analytics</h4><p>Data tools that need a name as efficient as the product.</p></div></div></div>
+      </div></section>
+      <section id="rb-offer"><div class="final"><div class="label">Serious inquiries only</div><div class="h2">Ready to own <span class="it">Reports.bot?</span></div><p>Submit your offer and acquire the domain today.</p>${offer("reports.bot","pri")}</div></section>
+      <footer><div class="brand" style="font-size:1rem">Reports<span class="b">.bot</span></div><div>&copy; 2026 &middot; Premium domain for acquisition</div></footer>
+    </div>
+  </div>`,
+  init: () => {
+    const txt="Revenue rose 24% QoQ, led by enterprise renewals. Churn fell to 1.8%. Three anomalies flagged for review — all resolved automatically. Full breakdown attached.";
+    const el=document.getElementById("rbtyped"); if(!el) return; let i=0;
+    (function type(){ if(i<=txt.length){ el.innerHTML=txt.slice(0,i)+'<span class="cur"></span>'; i++; setTimeout(type,22+Math.random()*30);} else {setTimeout(()=>{i=0;type()},4200);} })();
+    const mb=document.getElementById("rbMb"); [40,62,48,75,58,82,66,90,72,95].forEach((v,k)=>{const b=document.createElement("i");b.style.height=v+"%";b.style.animationDelay=(.6+k*.06)+"s";mb.appendChild(b);});
+  }
+},
+
+/* ============================== 5. WORKFLOW.BOT ============================== */
+"workflow.bot": {
+  title: "Workflow.bot — Premium Domain for Sale",
+  fonts: "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Azeret+Mono:wght@400;500;600&display=swap",
+  html: () => `
+  <style>
+    .wf{--bg:#08070f;--panel:#0f0e1c;--panel2:#15132a;--violet:#8b5cf6;--violetb:#a78bfa;--cyan:#22d3ee;--cyanb:#67e8f9;--lime:#a3e635;--text:#ece9f7;--muted:#8b86a8;--line:rgba(139,92,246,.16);--lc:rgba(34,211,238,.18);
+      font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);position:relative;overflow-x:hidden}
+    .wf .mono{font-family:'Azeret Mono',monospace}
+    .wf .aur{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(45% 40% at 75% 8%,rgba(139,92,246,.22),transparent 60%),radial-gradient(40% 40% at 15% 70%,rgba(34,211,238,.16),transparent 60%),radial-gradient(40% 50% at 90% 90%,rgba(163,230,53,.07),transparent 60%)}
+    .wf .meshg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;background-image:linear-gradient(rgba(139,92,246,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.05) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(circle at 50% 40%,#000,transparent 75%);mask-image:radial-gradient(circle at 50% 40%,#000,transparent 75%)}
+    .wf .wrap{position:relative;z-index:3;max-width:1180px;margin:0 auto;padding:0 28px}
+    .wf nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
+    .wf .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.2rem;letter-spacing:-.02em}.wf .brand .b{background:linear-gradient(90deg,var(--cyanb),var(--violetb));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .wf .ntag{display:flex;align-items:center;gap:8px;font-size:.74rem;color:var(--cyanb);font-weight:500;border:1px solid var(--lc);background:rgba(34,211,238,.05);padding:8px 15px;border-radius:8px;letter-spacing:.03em}
+    .wf .ld{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime);animation:wfp 1.5s infinite}@keyframes wfp{50%{opacity:.3}}
+    .wf .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:72px 0 60px}
+    .wf .eye{display:inline-flex;align-items:center;gap:9px;font-size:.76rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--violetb);margin-bottom:24px}.wf .eye .sq{width:8px;height:8px;border-radius:2px;background:var(--violet);animation:wfp 1.5s infinite}
+    .wf h1{font-size:clamp(2.8rem,6.5vw,5.2rem);font-weight:800;line-height:.98;letter-spacing:-.04em;margin-bottom:22px}.wf h1 .g{background:linear-gradient(110deg,var(--cyanb),var(--violetb) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .wf .sub{font-size:1.16rem;color:var(--muted);line-height:1.6;margin-bottom:34px;max-width:500px}.wf .sub b{color:var(--text);font-weight:600}
+    .wf .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+    .wf .btn{padding:16px 30px;border-radius:12px;font-weight:600;font-size:.98rem;cursor:pointer;border:none;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:.25s;font-family:inherit}
+    .wf .pri{background:linear-gradient(110deg,var(--violet),var(--cyan));color:#0a0814;box-shadow:0 12px 38px -8px rgba(139,92,246,.55)}.wf .pri:hover{transform:translateY(-3px)}
+    .wf .gho{background:rgba(236,233,247,.04);border:1px solid var(--line);color:var(--text)}.wf .gho:hover{border-color:var(--cyan);background:rgba(34,211,238,.06)}
+    .wf .gc{background:linear-gradient(160deg,var(--panel),var(--bg));border:1px solid var(--line);border-radius:20px;padding:22px;position:relative;overflow:hidden}
+    .wf .gh{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding:0 6px}.wf .gh .t{font-size:.74rem;color:var(--muted);font-family:'Azeret Mono'}.wf .gh .run{font-size:.72rem;color:var(--lime);font-weight:600;display:flex;align-items:center;gap:6px}
+    .wf svg.flow{width:100%;height:330px;display:block}
+    .wf .node rect{fill:var(--panel2);stroke:var(--line);stroke-width:1.5}.wf .node text{fill:var(--text);font-size:11px;font-family:'Azeret Mono',monospace;font-weight:500}
+    .wf .node.act rect{stroke:var(--cyan);filter:drop-shadow(0 0 8px rgba(34,211,238,.4))}
+    .wf .edge{fill:none;stroke:rgba(139,92,246,.35);stroke-width:1.6}.wf .pulse{fill:var(--cyanb);filter:drop-shadow(0 0 5px var(--cyan))}
+    .wf section{padding:80px 0;position:relative;z-index:3}
+    .wf .label{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:14px}
+    .wf .h2{font-size:clamp(2rem,4.5vw,3.1rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-bottom:16px}.wf .h2 .g{background:linear-gradient(110deg,var(--cyanb),var(--violetb));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .wf .lead{color:var(--muted);font-size:1.06rem;max-width:560px;line-height:1.6}
+    .wf .fe{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+    .wf .fc{background:linear-gradient(160deg,var(--panel),rgba(8,7,15,.6));border:1px solid var(--line);border-radius:18px;padding:30px 26px;transition:.3s}.wf .fc:hover{transform:translateY(-5px);border-color:var(--cyan)}
+    .wf .fi{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px;background:rgba(34,211,238,.1);color:var(--cyanb);border:1px solid var(--lc)}
+    .wf .fc h3{font-size:1.18rem;font-weight:700;margin-bottom:10px}.wf .fc p{color:var(--muted);line-height:1.55;font-size:.94rem}
+    .wf .perfect{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+    .wf .pc{background:rgba(15,14,28,.6);border:1px solid var(--line);border-radius:16px;padding:28px;transition:.3s}.wf .pc:hover{border-color:var(--cyan);background:rgba(21,19,42,.7)}
+    .wf .pc .tag{font-family:'Azeret Mono';font-size:.72rem;color:var(--violetb);margin-bottom:14px}.wf .pc h4{font-size:1.1rem;font-weight:700;margin-bottom:8px}.wf .pc p{color:var(--muted);font-size:.91rem;line-height:1.5}
+    .wf .final{text-align:center;border:1px solid var(--line);border-radius:24px;padding:76px 40px;margin:54px 0 80px;background:radial-gradient(70% 100% at 50% 0%,rgba(139,92,246,.16),transparent 70%)}.wf .final .h2{margin-bottom:14px}.wf .final p{color:var(--muted);font-size:1.1rem;margin-bottom:32px}
+    .wf .offer-box{display:flex;gap:12px;max-width:480px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+    .wf .offer-box input{flex:1;min-width:210px;padding:16px 20px;border-radius:12px;border:1px solid var(--line);background:rgba(8,7,15,.7);color:var(--text);font-size:.98rem;font-family:inherit;outline:none}.wf .offer-box input:focus{border-color:var(--cyan)}
+    .wf .micro{font-size:.8rem;color:var(--muted);margin-top:18px;font-family:'Azeret Mono'}
+    .wf footer{border-top:1px solid var(--line);padding:32px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:.84rem;align-items:center;position:relative;z-index:3}
+    @media(max-width:880px){.wf .hero{grid-template-columns:1fr;gap:36px}.wf .fe,.wf .perfect{grid-template-columns:1fr}}
+  </style>
+  <div class="wf">
+    <div class="aur"></div><div class="meshg"></div>
+    <div class="wrap">
+      <nav><div class="brand"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="12" width="9" height="9" rx="2.5" fill="rgba(34,211,238,.15)" stroke="#22d3ee" stroke-width="1.6"/><rect x="21" y="3" width="9" height="9" rx="2.5" fill="rgba(139,92,246,.15)" stroke="#a78bfa" stroke-width="1.6"/><rect x="21" y="21" width="9" height="9" rx="2.5" fill="rgba(163,230,53,.12)" stroke="#a3e635" stroke-width="1.6"/><path d="M11 16.5 C16 16.5 16 7.5 21 7.5 M11 16.5 C16 16.5 16 25.5 21 25.5" stroke="#8b5cf6" stroke-width="1.5" fill="none"/></svg>Workflow<span class="b">.bot</span></div><span class="ntag"><span class="ld"></span> Available now</span></nav>
+      <header class="hero">
+        <div><div class="eye"><span class="sq"></span> Premium .bot domain &middot; for sale</div><h1>Where work<br><span class="g">runs itself.</span></h1><p class="sub"><b>Workflow.bot</b> captures the essence of modern AI automation &mdash; no-code builders, autonomous agents, and orchestration platforms that move work without friction.</p><div class="cta-row"><a href="#wf-offer" class="btn pri">Make an offer &rarr;</a><a href="#wf-why" class="btn gho">Why .bot wins</a></div></div>
+        <div class="gc"><div class="gh"><span class="t">workflow.bot &middot; orchestration</span><span class="run"><span class="ld"></span> RUNNING</span></div>
+          <svg class="flow" viewBox="0 0 440 330"><path class="edge" id="wfe1" d="M90 70 C150 70 150 165 210 165"/><path class="edge" id="wfe2" d="M210 165 C270 165 270 70 330 70"/><path class="edge" id="wfe3" d="M210 165 C270 165 270 260 330 260"/><path class="edge" id="wfe4" d="M90 260 C150 260 150 165 210 165"/>
+            <circle class="pulse" r="3.5"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0s"><mpath href="#wfe1"/></animateMotion></circle><circle class="pulse" r="3.5"><animateMotion dur="2.4s" repeatCount="indefinite" begin="1.2s"><mpath href="#wfe4"/></animateMotion></circle><circle class="pulse" r="3.5"><animateMotion dur="2.2s" repeatCount="indefinite" begin="2.4s"><mpath href="#wfe2"/></animateMotion></circle><circle class="pulse" r="3.5"><animateMotion dur="2.2s" repeatCount="indefinite" begin="2.6s"><mpath href="#wfe3"/></animateMotion></circle>
+            <g class="node"><rect x="20" y="52" width="70" height="36" rx="10"/><text x="34" y="74">trigger</text></g><g class="node"><rect x="20" y="242" width="70" height="36" rx="10"/><text x="38" y="264">input</text></g><g class="node act"><rect x="170" y="145" width="80" height="40" rx="11"/><text x="186" y="169">agent.ai</text></g><g class="node"><rect x="330" y="52" width="80" height="36" rx="10"/><text x="346" y="74">notify</text></g><g class="node"><rect x="330" y="242" width="80" height="36" rx="10"/><text x="346" y="264">deploy</text></g>
+          </svg>
+          <div style="display:flex;gap:10px;padding:6px 6px 2px"><span class="mono" style="font-size:.72rem;color:var(--lime)">&check; 14 steps automated</span><span class="mono" style="font-size:.72rem;color:var(--muted);margin-left:auto">0 manual handoffs</span></div>
+        </div>
+      </header>
+      <section id="wf-why"><div class="label">Why it wins</div><div class="h2">The exact-match name for<br>the <span class="g">agentic era.</span></div><p class="lead">"Workflow automation" is exploding. This domain sits at the dead center of where the market is heading &mdash; and says so in two words.</p>
+        <div class="fe">
+          <div class="fc"><div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2"/></svg></div><h3>Exact-match relevance</h3><p>Aligned with surging "workflow automation" and AI-agent search trends &mdash; pure category authority.</p></div>
+          <div class="fc"><div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="7" width="14" height="12" rx="2"/><path d="M12 7V4M9 13h.01M15 13h.01"/></svg></div><h3>.bot signals agents</h3><p>The extension communicates bot and agent capability instantly. The name <em>is</em> the product category.</p></div>
+          <div class="fc"><div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>High-growth market</h3><p>Targets agentic AI and enterprise productivity &mdash; two of the fastest-moving categories in software.</p></div>
+        </div>
+      </section>
+      <section><div class="label">Perfect for</div><div class="h2">Who should <span class="g">own it.</span></div>
+        <div class="perfect"><div class="pc"><div class="tag mono">// saas</div><h4>Automation platforms</h4><p>Zapier-style no-code tools orchestrating business processes.</p></div><div class="pc"><div class="tag mono">// agents</div><h4>Agentic AI builders</h4><p>Autonomous-agent and no-code workflow construction kits.</p></div><div class="pc"><div class="tag mono">// bpm</div><h4>Process management</h4><p>Enterprise BPM solutions that need a name as modern as the stack.</p></div></div>
+      </section>
+      <section id="wf-offer"><div class="final"><div class="label">Serious inquiries only</div><div class="h2">Lead the <span class="g">automation revolution.</span></div><p>Secure <b style="color:var(--cyanb)">Workflow.bot</b> and own the category name.</p>${offer("workflow.bot","pri")}</div></section>
+      <footer><div class="brand" style="font-size:1rem">Workflow<span class="b">.bot</span></div><div>&copy; 2026 &middot; Premium domain for acquisition</div></footer>
+    </div>
+  </div>`,
+  init: () => {}
+}
+
+};
+
+/* ---------- boot ---------- */
+(function boot(){
+  const params = new URLSearchParams(location.search);
+  let host = (params.get("domain") || location.hostname || "").replace(/^www\./,"").toLowerCase();
+  // map bare host without TLD edge cases; direct key match
+  const design = DESIGNS[host];
+  if(!design) return; // leave fallback picker visible for unknown hosts (localhost / *.vercel.app)
+  document.title = design.title;
+  fonts(design.fonts);
+  document.getElementById("app").innerHTML = design.html();
+  try { design.init(); } catch(e){ console.error(e); }
+})();
+</script>
+</body>
+</html>
